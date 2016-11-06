@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_help_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/activity_help_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear_layout_indicator"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+    </android.support.v4.view.ViewPager>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linear_layout_indicator"
+        android:background="#E0E0E0" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <gifteconomy.dem.com.gifteconomy.widget.intro.view.CirclePageIndicator
+            android:id="@+id/activity_help_view_page_indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:minHeight="24dp"
+            app:fillColor="#41FFFFFF"
+            app:pageColor="#14FFFFFF"
+            app:radius="6dp"
+            app:strokeColor="#E0E0E0"
+            app:strokeWidth="0dp" />
+
+        <Button
+            android:id="@+id/activity_help_skip_textview"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="@string/tutorial_done"
+            android:textColor="@color/tutorial_buttonTextColor"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/activity_next_button"
+                style="@android:style/Widget.Holo.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:padding="16dp"
+                android:src="@drawable/heart"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/activity_tutorial_done"
+                style="@android:style/Widget.Holo.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dimen_8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="@string/tutorial_skip"
+                android:textColor="@color/tutorial_buttonTextColor"
+                android:textSize="18sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

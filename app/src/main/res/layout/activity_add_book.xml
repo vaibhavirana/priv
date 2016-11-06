@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:TagsEditText="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gifteconomy.dem.com.gifteconomy.home.activity.AddThingsActivity">
+
+    <include layout="@layout/appbar_main" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnAdd"
+        android:layout_below="@+id/tool_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnAdd"
+            android:layout_below="@+id/tool_bar"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16dp">
+
+            <ImageView
+                android:id="@+id/imgAdd"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_add_a_photo_black_48dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <EditText
+                    android:id="@+id/edtTitle"
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Title"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:singleLine="true">
+
+                </EditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <EditText
+                    android:id="@+id/edtAuthorName"
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Author Name"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:singleLine="true">
+
+                </EditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <EditText
+                    android:id="@+id/edtDesc"
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|top"
+                    android:hint="Description"
+                    android:imeOptions="actionNext"
+                    android:lines="3"
+                    android:singleLine="false" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+               <!-- <mabbas007.tagsedittext.TagsEditText
+                    android:id="@+id/tagsEditText"
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="What do you want in return"
+                    TagsEditText:allowSpaceInTag="true"
+                    TagsEditText:tagsBackground="@drawable/square"
+                    TagsEditText:tagsCloseImagePadding="@dimen/defaultTagsCloseImagePadding"
+                    TagsEditText:tagsCloseImageRight="@drawable/tag_close"
+                    TagsEditText:tagsTextColor="@color/white"
+                    TagsEditText:tagsTextSize="@dimen/defaultTagsTextSize" />-->
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnAdd"
+        style="@style/MyButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Add" />
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">GiftEconomy</string>
+
+    <string name="tutorial_done">Login</string>
+    <string name="forget">Forget Password</string>
+    <string name="tutorial_skip">Get Started</string>
+
+    <string name="fail_msg">Some error occured. Please try again</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    // Error Messages
+    <string name="enter_email">Enter Email-id</string>
+    <string name="invalid_email">Invalid Email-id</string>
+    <string name="invalid_credential">Invalid Login Credential</string>
+    <string name="enter_pwd">Enter Password</string>
+    <string name="invalid_pwd">Password must be of 6 characters</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="forget_pswd">Forget Password</string>
+    <string name="register">Create New Account</string>
+    <string name="title_activity_signup">Sign up</string>
+    <string name="login">LOGIN</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">GOOGLE</string>
+
+    // tutorial
+    <string name="slide_1_african_story_books">New African Story Books</string>
+    <string name="slide_2_volunteer_professionals">Created by Volunteer Professionals</string>
+    <string name="slide_3_download_and_go">Download and Read on the go</string>
+    <string name="slide_4_different_languages">Available in different languages</string>
+    <string name="slide_1_african_story_books_subtitle">That anyone can freely translate and distribute.</string>
+    <string name="slide_2_volunteer_professionals_subtitle">On a single day, designers, writers and illustrators meet to create cool books.</string>
+    <string name="slide_3_download_and_go_subtitle">On the bus, in a train, wherever you are - the books are there too.</string>
+    <string name="slide_4_different_languages_subtitle">English, Zulu, Afrikaans, Xhosa and more!</string>
+    <string name="view_sample_tut">View Tutorial Example</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="prompt_age">Age (E.g. 24)</string>
+    <string name="prompt_intro">Introduce Yourself</string>
+    <string name="submit">Submit</string>
+    <string name="choose_interest">Choose your Interest</string>
+    <string name="choose_pic">Choose Picture</string>
+    <string name="choose_pic_message">choose picture from gallery.</string>
+
+
+    <string name="lorem_ipsum_short">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </string>
+    <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </string>
+
+    <string name="title_following">Following</string>
+    <string name="toolbar_bio">Bio</string>
+    <string name="toolbar_details">Details</string>
+    <string name="no_things">No Things</string>
+    <string name="request_borrow">Request To Borrow</string>
+
+    <string-array name="array_names">
+        <item>"Anastasia Druzhinina"</item>
+        <item>"Andriy Hristyan"</item>
+        <item>"Dmitriy Dovbnya"</item>
+        <item>"Dmitry Denisenko"</item>
+        <item>"Eduard Baev"</item>
+        <item>"Iliya Bershadskiy"</item>
+        <item>"Kirill Penzykov"</item>
+        <item>"Konstantin Rudenko"</item>
+        <item>"Oleksii Shliama"</item>
+        <item>"Pavel Apisov"</item>
+        <item>"Vadim Ooleynik"</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="valid_age_error">Enter Valid Age</string>
+
+</resources>

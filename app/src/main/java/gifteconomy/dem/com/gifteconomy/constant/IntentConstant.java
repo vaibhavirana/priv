@@ -1,0 +1,30 @@
+package gifteconomy.dem.com.gifteconomy.constant;
+
+/**
+ * Created by raghavthakkar on 02-06-2016.
+ */
+public class IntentConstant {
+
+    public static final String INTENT_EXTRA_BUTTON_CLICK = "Intent_extra_button_click";
+    public static final String INTENT_EXTRA_SHAPE = "INTENT_EXTRA_SHAPE";
+    public static final String INTENT_EXTRA_MEASUREMENT_TYPE = "INTENT_EXTRA_MEASUREMENT_TYPE";
+    public static final String INTENT_EXTRA_MEASUREMENT_UNIT = "INTENT_EXTRA_MEASUREMENT_UNIT";
+    public static final String INTENT_EXTRA_MEASUREMENT = "INTENT_EXTRA_MEASUREMENT";
+    public static final String INTENT_EXTRA_MEASUREMENT_DATE = "INTENT_EXTRA_MEASUREMENT_DATE";
+    public static final String INTENT_EXTRA_MEASUREMENT_NOTES = "INTENT_EXTRA_MEASUREMENT_NOTES";
+    public static final String INTENT_EXTRA_MEASUREMENT_ID = "INTENT_EXTRA_MEASUREMENT_ID";
+
+    public static final String INTENT_EXTRA_IS_UPDATE = "INTENT_EXTRA_IS_UPDATE";
+
+    public static String INTENT_EXTRA_MEDICINEID = "INTENT_EXTRA_MEDICINEID";
+    public static String INTENT_EXTRA_MEDICINE_ALARM_ID = "INTENT_EXTRA_MEDICINE_ALARM_ID";
+    public static String INTENT_MEDICINE_SCHEDULE_DATE = "INTENT_MEDICINE_SCHEDULE_DATE";
+
+    public static String INTENT_EXTRA_APPOINTMENTID = "INTENT_EXTRA_APPOINTMENTID";
+    public static String INTENT_APPOINTMENT_SCHEDULE_DATE = "INTENT_APPOINTMENT_SCHEDULE_DATE";
+    public static String INTENT_EXTRA_APPOINTMENT_SCHEDULEID = "INTENT_EXTRA_APPOINTMENT_SCHEDULEID";
+
+    public static String INTENT_EXTRA_MEDICINE_ACTION_PERFORMED = "INTENT_EXTRA_MEDICINE_ACTION_PERFORMED";
+
+    public static String NOTIFICATION_ID = "NOTIFICATION_ID";
+}

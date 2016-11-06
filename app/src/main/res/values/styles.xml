@@ -1,0 +1,66 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextViewProfileToolbarTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_profile_toolbar_title</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="StyledTilEditTextTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/half_black</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="android:textColorPrimary">@color/blue</item>
+        <item name="android:textSize">@dimen/M_TEXT</item>
+    </style>
+
+    <style name="MyButtonStyle" parent="android:Widget.Button">
+        <item name="android:background">@color/button_bg</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/N_TEXT</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">12dp</item>
+
+    </style>
+
+    <style name="StyledTilEditText">
+        <item name="android:theme">@style/StyledTilEditTextTheme</item>
+        <item name="android:paddingLeft">@dimen/dimen_8dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_16dp</item>
+    </style>
+
+    <style name="SwitchStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlActivated">@color/button_bg</item>
+        <item name="colorSwitchThumbNormal">@color/off_white</item>
+    </style>
+
+    <style name="TagEditText">
+        <item name="android:theme">@style/TagEditTextTheme</item>
+        <item name="android:paddingLeft">@dimen/dimen_8dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_16dp</item>
+    </style>
+
+    <style name="TagEditTextTheme">
+        <item name="colorControlNormal">@color/half_black</item>
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+</resources>

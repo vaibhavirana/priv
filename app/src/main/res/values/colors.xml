@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4f91ff</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="light_background">#45d3d3d3</color>
+
+
+    <color name="slide_4">#dcbcce</color>
+    <color name="slide_3">#BACDB0</color>
+    <color name="slide_2">#729B79</color>
+    <color name="slide_1">#475B63</color>
+
+
+    <color name="button_bg">#FF8161</color>
+    <color name="fb">#3B5998</color>
+    <color name="google">#CC3E28</color>
+
+    <color name="gray">#21252a</color>
+    <color name="orange">#ff8c6a</color>
+    <color name="white">#ffffff</color>
+    <color name="off_white">#f1f1f1</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="primary_text">#ffffff</color>
+    <color name="secondary_text">#ffffff</color>
+
+
+    <color name="tutorial_buttonTextColor">#ffffff</color>
+    <color name="tutorial_subtitleTextColor">#ffffff</color>
+    <color name="tutorial_titleTextColor">#ffffff</color>
+
+    <color name="main_background">#d20c639e</color>
+
+    <color name="edittext_hint_color">#57748a</color>
+
+    <color name="blue">#0F3959</color>
+    <color name="trans_blue">#800F3959</color>
+    <color name="half_black">#676767</color>
+</resources>
