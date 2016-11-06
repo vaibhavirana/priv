@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app1="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/appbar_main" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/imgBook"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/book" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/txtBookName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/dimen_8dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:text="RICHARD"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/XL_TEXT"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtBookAuthorName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/dimen_8dp"
+                        android:text="@string/lorem_ipsum_short"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/M_TEXT"
+                        android:textStyle="normal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtBookDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:fontFamily="sans-serif"
+                android:padding="@dimen/dimen_8dp"
+                android:text="@string/lorem_ipsum_long"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="@dimen/M_TEXT"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:background="@color/cardview_dark_background"></View>
+
+            <LinearLayout
+                android:id="@+id/llUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:orientation="horizontal">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_8dp"
+                    android:src="@drawable/user"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="2dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="0" />
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_8dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="RICHARD"
+                    android:textAllCaps="true"
+                    android:textColor="@color/half_black"
+                    android:textSize="@dimen/XL_TEXT"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:background="@color/cardview_dark_background"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <gifteconomy.dem.com.gifteconomy.like.LikeButton
+                    android:id="@+id/heart_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    app:anim_scale_factor="3"
+                    app:icon_size="18dp"
+                    app:icon_type="heart" />
+
+                <TextView
+                    android:id="@+id/txtFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/dimen_4dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="Favorites"
+                    android:textColor="@color/half_black"
+                    android:textSize="@dimen/L_TEXT" />
+
+
+                <TextView
+                    android:id="@+id/txtShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_8dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_action_share"
+                    android:drawableTint="@color/half_black"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="Share"
+                    android:textColor="@color/half_black"
+                    android:textSize="@dimen/L_TEXT" />
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabRequestBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="@dimen/dimen_16dp"
+                android:src="@drawable/ic_text"
+                android:tint="@color/white"
+                app1:backgroundTint="@color/button_bg"
+                app1:layout_anchor="@id/rvListLayout"
+                app1:layout_anchorGravity="bottom|right|end"
+                app:layout_behavior="gifteconomy.dem.com.gifteconomy.helper.ScrollAwareFABBehavior" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

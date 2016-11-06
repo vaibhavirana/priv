@@ -19,9 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import gifteconomy.dem.com.gifteconomy.R;
-import gifteconomy.dem.com.gifteconomy.helper.Functions;
 import gifteconomy.dem.com.gifteconomy.home.aapter.PagerAdapter;
-import gifteconomy.dem.com.gifteconomy.tutorial.TutorialActiivty;
 import gifteconomy.dem.com.gifteconomy.ui.FeedbackActivity;
 import gifteconomy.dem.com.gifteconomy.ui.InviteEarnActivity;
 import gifteconomy.dem.com.gifteconomy.ui.MyBartersActivity;
@@ -29,6 +27,7 @@ import gifteconomy.dem.com.gifteconomy.ui.MyBookShelfActivity;
 import gifteconomy.dem.com.gifteconomy.ui.MyInventoryActivity;
 import gifteconomy.dem.com.gifteconomy.ui.ProfileActivity;
 import gifteconomy.dem.com.gifteconomy.ui.SettingsActivity;
+import gifteconomy.dem.com.gifteconomy.utils.Functions;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -156,9 +155,9 @@ public class HomeActivity extends AppCompatActivity {
                 break;
 
             case R.id.drawer_tips:
-                Intent intent=new Intent(HomeActivity.this,TutorialActiivty.class);
+                /*Intent intent=new Intent(HomeActivity.this,TutorialActiivty.class);
                 intent.putExtra("activity","tips");
-                startActivity(intent);
+                startActivity(intent);*/
 
                // Functions.fireIntent(HomeActivity.this, TutorialActiivty.class);
                 break;

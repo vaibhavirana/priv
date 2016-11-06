@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="gifteconomy.dem.com.gifteconomy.ui.ProfileActivity">
+
+    <include layout="@layout/appbar_main" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">   
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:src="@drawable/illya" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="@dimen/XXL_TEXT" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Occupation"
+                android:textSize="@dimen/L_TEXT" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:background="@color/half_black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gender"
+                    android:textSize="@dimen/L_TEXT" />
+
+                <View
+                    android:layout_width="@dimen/dimen_1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_12dp"
+                    android:layout_marginRight="@dimen/dimen_12dp"
+                    android:background="@color/half_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="age"
+                    android:textSize="@dimen/L_TEXT" />
+
+                <View
+                    android:layout_width="@dimen/dimen_1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_12dp"
+                    android:layout_marginRight="@dimen/dimen_12dp"
+                    android:background="@color/half_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="distance"
+                    android:textSize="@dimen/L_TEXT" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:text="location"
+                android:textSize="@dimen/L_TEXT" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Books"
+                android:textSize="@dimen/L_TEXT" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/book" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/book" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/book" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/book" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/book" />
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/book" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:background="@color/half_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skills Posted:"
+                android:textSize="@dimen/L_TEXT" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/skill" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/skill" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/skill" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/skill" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/skill" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="128dp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/dimen_8dp"
+                        android:src="@drawable/skill" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+    
+    </ScrollView>
+
+</LinearLayout>

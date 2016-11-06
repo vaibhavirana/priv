@@ -52,27 +52,27 @@ public class HomeFragment extends Fragment {
         cardStack.setEventCallback(new SwipeDeck.SwipeEventCallback() {
             @Override
             public void cardSwipedLeft(int position) {
-                Log.i("MainActivity", "card was swiped left, position in adapter: " + position);
+                Log.i("Activity", "card was swiped left, position in adapter: " + position);
             }
 
             @Override
             public void cardSwipedRight(int position) {
-                Log.i("MainActivity", "card was swiped right, position in adapter: " + position);
+                Log.i("Activity", "card was swiped right, position in adapter: " + position);
             }
 
             @Override
             public void cardsDepleted() {
-                Log.i("MainActivity", "no more cards");
+                Log.i("Activity", "no more cards");
             }
 
             @Override
             public void cardActionDown() {
-                Log.i("MainActivity", "cardActionDown");
+                Log.i("Activity", "cardActionDown");
             }
 
             @Override
             public void cardActionUp() {
-                Log.i("MainActivity", "cardActionUp");
+                Log.i("Activity", "cardActionUp");
             }
 
         });

@@ -1,0 +1,18 @@
+<gifteconomy.dem.com.gifteconomy.custom.cardstack.SwipeFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <gifteconomy.dem.com.gifteconomy.custom.cardstack.SwipeDeck
+        android:id="@+id/swipe_deck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        swipedeck:card_spacing="10dp"
+        swipedeck:max_visible="3"
+        swipedeck:opacity_end="0.2"
+        swipedeck:render_above="true"
+        swipedeck:rotation_degrees="15"></gifteconomy.dem.com.gifteconomy.custom.cardstack.SwipeDeck>
+</gifteconomy.dem.com.gifteconomy.custom.cardstack.SwipeFrameLayout>

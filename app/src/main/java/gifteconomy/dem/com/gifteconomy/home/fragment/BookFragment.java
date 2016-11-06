@@ -17,11 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gifteconomy.dem.com.gifteconomy.R;
-import gifteconomy.dem.com.gifteconomy.helper.Functions;
 import gifteconomy.dem.com.gifteconomy.home.aapter.UserBookListAdapter;
 import gifteconomy.dem.com.gifteconomy.home.activity.AddBookActivity;
 import gifteconomy.dem.com.gifteconomy.home.activity.BookdetailActivty;
 import gifteconomy.dem.com.gifteconomy.home.model.UserBook;
+import gifteconomy.dem.com.gifteconomy.utils.Functions;
 
 /**
  * Created by Workstation01 on 7/20/2016.

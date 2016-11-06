@@ -24,8 +24,8 @@
 
             <ImageView
                 android:id="@+id/imgAdd"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_add_a_photo_black_48dp" />
@@ -41,25 +41,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Title"
-                    android:imeOptions="actionNext"
-                    android:maxLines="1"
-                    android:singleLine="true">
-
-                </EditText>
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_8dp">
-
-                <EditText
-                    android:id="@+id/edtAuthorName"
-                    style="@style/StyledTilEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Author Name"
                     android:imeOptions="actionNext"
                     android:maxLines="1"
                     android:singleLine="true">

@@ -20,7 +20,6 @@ import com.mlsdev.rximagepicker.Sources;
 import java.util.ArrayList;
 
 import gifteconomy.dem.com.gifteconomy.R;
-import gifteconomy.dem.com.gifteconomy.helper.Functions;
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Func1;

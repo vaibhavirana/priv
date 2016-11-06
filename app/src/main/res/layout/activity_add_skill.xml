@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_8dp">
 
-               <!-- <mabbas007.tagsedittext.TagsEditText
+                <mabbas007.tagsedittext.TagsEditText
                     android:id="@+id/tagsEditText"
                     style="@style/StyledTilEditText"
                     android:layout_width="match_parent"
@@ -105,7 +105,7 @@
                     TagsEditText:tagsCloseImagePadding="@dimen/defaultTagsCloseImagePadding"
                     TagsEditText:tagsCloseImageRight="@drawable/tag_close"
                     TagsEditText:tagsTextColor="@color/white"
-                    TagsEditText:tagsTextSize="@dimen/defaultTagsTextSize" />-->
+                    TagsEditText:tagsTextSize="@dimen/defaultTagsTextSize" />
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>

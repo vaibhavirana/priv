@@ -18,11 +18,11 @@ import java.util.List;
 
 import gifteconomy.dem.com.gifteconomy.R;
 import gifteconomy.dem.com.gifteconomy.custom.EmptyLayout;
-import gifteconomy.dem.com.gifteconomy.helper.Functions;
 import gifteconomy.dem.com.gifteconomy.home.aapter.UserThingListAdapter;
 import gifteconomy.dem.com.gifteconomy.home.activity.AddThingsActivity;
 import gifteconomy.dem.com.gifteconomy.home.activity.ThingdetailActivty;
 import gifteconomy.dem.com.gifteconomy.home.model.UserThing;
+import gifteconomy.dem.com.gifteconomy.utils.Functions;
 
 /**
  * Created by Workstation01 on 7/20/2016.

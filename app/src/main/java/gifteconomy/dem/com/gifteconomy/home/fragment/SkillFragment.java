@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gifteconomy.dem.com.gifteconomy.R;
-import gifteconomy.dem.com.gifteconomy.helper.Functions;
 import gifteconomy.dem.com.gifteconomy.home.aapter.UserSkillListAdapter;
 import gifteconomy.dem.com.gifteconomy.home.activity.AddSkillActivity;
 import gifteconomy.dem.com.gifteconomy.home.activity.SkilldetailActivty;
 import gifteconomy.dem.com.gifteconomy.home.model.Userskill;
+import gifteconomy.dem.com.gifteconomy.utils.Functions;
 
 /**
  * Created by Workstation01 on 7/20/2016.

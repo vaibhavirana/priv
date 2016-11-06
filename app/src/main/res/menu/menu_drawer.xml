@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawer_shared"
+            android:checked="true"
+            android:title="Shared/Promotions" />
+
+        <item
+            android:id="@+id/drawer_inventory"
+            android:title="My Inventory" />
+
+        <item
+            android:id="@+id/drawer_barters"
+            android:title="My Barters" />
+
+        <item
+            android:id="@+id/drawer_bookshelf"
+            android:title="My Bookshelf" />
+
+        <item
+            android:id="@+id/drawer_settings"
+            android:title="Account Settings" />
+
+        <item
+            android:id="@+id/drawer_tips"
+            android:title="Tips" />
+
+        <item
+            android:id="@+id/drawer_feedback"
+            android:title="Send Feedback" />
+
+        <item
+            android:id="@+id/drawer_tc"
+            android:title="Terms and Confitions" />
+
+    </group>
+</menu>
