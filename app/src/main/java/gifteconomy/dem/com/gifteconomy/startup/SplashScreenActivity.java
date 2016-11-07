@@ -40,7 +40,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     Functions.fireIntent(SplashScreenActivity.this, LoginActivityRevised.class);
 
                 } else {
-                    //Functions.fireIntent(SplashScreenActivity.this, MainPageActivity.class);
+                   // Functions.fireIntent(SplashScreenActivity.this, MainPageActivity.class);
 
                 }
 

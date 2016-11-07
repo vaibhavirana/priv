@@ -28,6 +28,9 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.text.ParseException;
@@ -36,8 +39,8 @@ import java.util.Date;
 
 public class Functions {
 
-    //private static GoogleCloudMessaging gcm;
-    //private static String GCM_ID = "", regid = "";
+    private static GoogleCloudMessaging gcm;
+    private static String GCM_ID = "", regid = "";
 
     public static void fireIntent(Context context, Class cls) {
         Intent i = new Intent(context, cls);
@@ -227,7 +230,7 @@ public class Functions {
         }
     }
 
-   /* public static boolean isGooglePlayServiceAvailable(Context mContext) {
+    public static boolean isGooglePlayServiceAvailable(Context mContext) {
         boolean flag = false;
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(mContext.getApplicationContext());
         if (status == ConnectionResult.SUCCESS) {
@@ -236,7 +239,7 @@ public class Functions {
             flag = false;
         }
         return flag;
-    }*/
+    }
 
 
 }

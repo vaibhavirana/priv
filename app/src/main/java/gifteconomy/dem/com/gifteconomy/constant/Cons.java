@@ -15,10 +15,15 @@ public class Cons {
     public static String[] FB_READ_PERMISSIONS = new String[]{"public_profile, email, user_birthday, user_friends"};
 
     public static final String BASEURL="http://demarlos.in/gift_economy/api/";
+    //public static final String BASEURL="192.168.21.101/gift_economy/api/";
     public static final String LOGIN="login";
+    public static final String SIGNUP="signup";
     public static final String INTEREST="interest";
+    public static final String USER="user";
+    public static final String NEARBY="nearby";
+    public static final String SKILS="skills";
+    public static final String POST_ITEMS="items";
 
-    public static String REGISTER="";
 
     public static enum SocialMediaProvider {
         FACEBOOK,

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:TagsEditText="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="gifteconomy.dem.com.gifteconomy.signup.SelectInterestActivity">
+
+    <include layout="@layout/appbar_main" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_16dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp">
+
+            <EditText
+                android:id="@+id/edtInterest"
+                style="@style/StyledTilEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Select Interest"
+                android:imeOptions="actionNext"
+                android:longClickable="false"
+                android:singleLine="false" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp">
+
+            <mabbas007.tagsedittext.TagsEditText
+                android:id="@+id/tagsSkills"
+                style="@style/TagEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add Skills (Type any skill then press enter)"
+                TagsEditText:allowSpaceInTag="true"
+                TagsEditText:tagsBackground="@drawable/square"
+                TagsEditText:tagsCloseImagePadding="@dimen/defaultTagsCloseImagePadding"
+                TagsEditText:tagsCloseImageRight="@drawable/tag_close"
+                TagsEditText:tagsTextColor="@color/white"
+                TagsEditText:tagsTextSize="@dimen/defaultTagsTextSize" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp">
+
+            <mabbas007.tagsedittext.TagsEditText
+                android:id="@+id/tagsThings"
+                style="@style/TagEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add Things (Type any skill then press enter)"
+                TagsEditText:allowSpaceInTag="true"
+                TagsEditText:tagsBackground="@drawable/square"
+                TagsEditText:tagsCloseImagePadding="@dimen/defaultTagsCloseImagePadding"
+                TagsEditText:tagsCloseImageRight="@drawable/tag_close"
+                TagsEditText:tagsTextColor="@color/white"
+                TagsEditText:tagsTextSize="@dimen/defaultTagsTextSize" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+</LinearLayout>

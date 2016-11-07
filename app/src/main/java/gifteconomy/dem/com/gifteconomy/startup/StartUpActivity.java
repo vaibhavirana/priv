@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import gifteconomy.dem.com.gifteconomy.R;
 import gifteconomy.dem.com.gifteconomy.constant.IntConstant;
 import gifteconomy.dem.com.gifteconomy.constant.IntentConstant;
+import gifteconomy.dem.com.gifteconomy.login.LoginActivityRevised;
 import gifteconomy.dem.com.gifteconomy.utils.Functions;
 import gifteconomy.dem.com.gifteconomy.utils.PrefsUtil;
+import gifteconomy.dem.com.gifteconomy.utils.UIUtil;
 import gifteconomy.dem.com.gifteconomy.widget.intro.TutorialItem;
 import gifteconomy.dem.com.gifteconomy.widget.intro.tutorial.MaterialTutorialActivity;
 
@@ -66,10 +68,9 @@ public class StartUpActivity extends AppCompatActivity {
                // UIUtil.startActivity(this, MainPageActivity.class, true);
             } else if (getButtonClickValue == IntConstant.loginClick) {
                 PrefsUtil.setIsGuideRead(StartUpActivity.this, true);
-               // UIUtil.startActivity(this, LoginActivity.class, true);
+                UIUtil.startActivity(this, LoginActivityRevised.class, true);
+                overridePendingTransition(R.anim.activity_open_translate, R.anim.activity_close_translate_rigth_left);
             }
-
-            overridePendingTransition(R.anim.activity_open_translate, R.anim.activity_close_translate_rigth_left);
             // user has read the guide screen or pressed the skip button
             //PrefsUtil.setIsGuideRead(this, true);
 
