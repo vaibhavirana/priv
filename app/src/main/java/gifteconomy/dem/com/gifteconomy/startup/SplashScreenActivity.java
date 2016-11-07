@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import gifteconomy.dem.com.gifteconomy.R;
+import gifteconomy.dem.com.gifteconomy.login.LoginActivityRevised;
 import gifteconomy.dem.com.gifteconomy.utils.Functions;
 import gifteconomy.dem.com.gifteconomy.utils.PrefsUtil;
 import gifteconomy.dem.com.gifteconomy.utils.UIUtil;
@@ -36,7 +37,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     Functions.fireIntent(SplashScreenActivity.this, StartUpActivity.class);
 
                 } else if (!PrefsUtil.getLogin(SplashScreenActivity.this)) {
-                    //Functions.fireIntent(SplashScreenActivity.this, LoginActivity.class);
+                    Functions.fireIntent(SplashScreenActivity.this, LoginActivityRevised.class);
 
                 } else {
                     //Functions.fireIntent(SplashScreenActivity.this, MainPageActivity.class);

@@ -76,4 +76,10 @@
     <string name="title_activity_maps">Map</string>
     <string name="valid_age_error">Enter Valid Age</string>
 
+
+    <string name="no_internet_connection_message">No Internet Connection. Please Connect To A Network</string>
+    <string name="api_error">Some Error Occured. Try Again Later</string>
+    <string name="facebook_app_secret">e685ac1f0882cd22e87cba268301fc92</string>
+    <string name="facebook_app_id">1081270995276512</string>
+    <string name="google_plus_app_key">AIzaSyD0zS7KVpPx-F-KOVGShyAIWa3yMV2uAsM</string>
 </resources>

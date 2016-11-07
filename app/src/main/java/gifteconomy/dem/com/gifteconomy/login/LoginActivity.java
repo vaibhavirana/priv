@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 
 import gifteconomy.dem.com.gifteconomy.R;
 import gifteconomy.dem.com.gifteconomy.home.activity.HomeActivity;
+import gifteconomy.dem.com.gifteconomy.utils.Functions;
 
 
 /**
@@ -135,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
             edtEmail.setError(getString(R.string.error_field_required));
             focusView = edtEmail;
             cancel = true;
-        } else if (!isValidEmail(email)) {
+        } else if (!Functions.emailValidation(email)) {
             edtEmail.setError(getString(R.string.error_invalid_email));
             focusView = edtEmail;
             cancel = true;

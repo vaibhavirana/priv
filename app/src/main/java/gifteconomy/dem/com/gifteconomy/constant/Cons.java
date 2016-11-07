@@ -20,5 +20,9 @@ public class Cons {
 
     public static String REGISTER="";
 
+    public static enum SocialMediaProvider {
+        FACEBOOK,
+        GOOGLE_PLUS
+    }
 
 }

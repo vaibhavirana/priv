@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gifteconomy.dem.com.gifteconomy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".utils.MyApplication"
         android:allowBackup="true"
@@ -9,6 +12,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
         <activity
             android:name=".startup.SplashScreenActivity"
@@ -27,9 +34,20 @@
             android:windowSoftInputMode="stateHidden|adjustResize"/>
 
         <activity
+            android:name=".login.LoginActivityRevised"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+
+        <activity
             android:name=".widget.intro.tutorial.MaterialTutorialActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service
+            android:name=".login.service.LoginService"
+            android:exported="false" />
+
     </application>
 
 </manifest>
