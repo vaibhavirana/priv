@@ -76,7 +76,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="valid_age_error">Enter Valid Age</string>
 
-
     <string name="no_internet_connection_message">No Internet Connection. Please Connect To A Network</string>
     <string name="api_error">Some Error Occured. Try Again Later</string>
     <string name="no_play_services">Please Install Google Play Services In Order To Proceed</string>
