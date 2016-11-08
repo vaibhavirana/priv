@@ -9,6 +9,7 @@ import android.util.Log;
 import com.cloudrail.si.exceptions.AuthenticationException;
 import com.cloudrail.si.interfaces.Profile;
 import com.cloudrail.si.services.Facebook;
+import com.cloudrail.si.services.GooglePlus;
 import com.cloudrail.si.types.DateOfBirth;
 
 import gifteconomy.dem.com.gifteconomy.R;
@@ -44,7 +45,7 @@ public class LoginService extends IntentService {
                 profile = new Twitter(this, getString(R.string.twitter_app_key), getString(R.string.twitter_app_secret));
                 break;*/
             case GOOGLE_PLUS:
-                //profile = new GooglePlus(this, getString(R.string.google_plus_app_key), getString(R.string.google_plus_app_secret));
+                profile = new GooglePlus(this, getString(R.string.google_plus_app_key), getString(R.string.google_plus_app_secret));
                 break;
 
         }

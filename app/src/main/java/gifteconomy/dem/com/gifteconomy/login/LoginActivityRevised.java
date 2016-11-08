@@ -23,6 +23,7 @@ import gifteconomy.dem.com.gifteconomy.login.API.LoginApi;
 import gifteconomy.dem.com.gifteconomy.login.model.LoginRequest;
 import gifteconomy.dem.com.gifteconomy.login.model.LoginResponse;
 import gifteconomy.dem.com.gifteconomy.login.service.LoginService;
+import gifteconomy.dem.com.gifteconomy.signup.SignupActivity;
 import gifteconomy.dem.com.gifteconomy.utils.Functions;
 import gifteconomy.dem.com.gifteconomy.utils.MyApplication;
 import retrofit2.Call;
@@ -106,7 +107,7 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnRegister:
-              //  Functions.fireIntent(this, SignupActivity.class);
+                Functions.fireIntent(this, SignupActivity.class);
                 break;
 
             case R.id.btnLogin:
@@ -120,7 +121,7 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
                     // FBLogin();
                     mProfile = Cons.SocialMediaProvider.FACEBOOK;
                     performLogin();
-                    Functions.showSnack(mRootView, getString(R.string.app_name));
+                   // Functions.showSnack(mRootView, getString(R.string.app_name));
                 }
                 else
                 Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
@@ -129,9 +130,9 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
             case R.id.btnGoogle:
                 if (Functions.isConnected(this)) {
                     // GooglesignIn();
-                    mProfile = Cons.SocialMediaProvider.FACEBOOK;
+                    mProfile = Cons.SocialMediaProvider.GOOGLE_PLUS;
                     performLogin();
-                    Functions.showSnack(mRootView, getString(R.string.app_name));
+                  //  Functions.showSnack(mRootView, getString(R.string.app_name));
                 }
                 else
                 Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
