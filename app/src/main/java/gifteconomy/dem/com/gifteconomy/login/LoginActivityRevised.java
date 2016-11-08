@@ -235,7 +235,7 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
                                     String gender = object.getString("gender");
                                     //tv_profile_name.setText(name);
                                     String imageurl = "https://graph.facebook.com/" + id + "/picture?type=large";
-                                      Log.d("user info", fname + " || " + lname + " || " +email +" || "+ gender );
+                                      Log.e("user info", fname + " || " + lname + " || " +email +" || "+ gender );
 
 
                                     ///////////////////////////////////  please code here//////////////////////

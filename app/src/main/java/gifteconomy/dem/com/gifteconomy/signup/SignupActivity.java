@@ -30,8 +30,6 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -68,8 +66,8 @@ public class SignupActivity extends AppCompatActivity {
     SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
 
-    private static final LatLngBounds BOUNDS_MOUNTAIN_VIEW = new LatLngBounds(
-            new LatLng(22.3071587, 73.1812187), new LatLng(22.3071587, 73.1812187));
+   /* private static final LatLngBounds BOUNDS_MOUNTAIN_VIEW = new LatLngBounds(
+            new LatLng(22.3071587, 73.1812187), new LatLng(22.3071587, 73.1812187));*/
     private ProgressDialog progressDialog;
     private Calendar myCalendar;
 
@@ -188,7 +186,7 @@ public class SignupActivity extends AppCompatActivity {
                 try {
                     PlacePicker.IntentBuilder intentBuilder =
                             new PlacePicker.IntentBuilder();
-                    intentBuilder.setLatLngBounds(BOUNDS_MOUNTAIN_VIEW);
+                    //intentBuilder.setLatLngBounds(BOUNDS_MOUNTAIN_VIEW);
                     Intent intent = intentBuilder.build(SignupActivity.this);
                     startActivityForResult(intent, 1);
                 } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
