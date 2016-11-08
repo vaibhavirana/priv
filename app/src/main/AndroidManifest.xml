@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-       <!-- <meta-data
+        <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />-->
+            android:value="@string/facebook_app_id" />
 
         <activity
             android:name=".startup.SplashScreenActivity"
@@ -38,7 +38,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
 
-
+        <activity
+            android:name=".signup.SignupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name=".widget.intro.tutorial.MaterialTutorialActivity"
             android:screenOrientation="portrait"

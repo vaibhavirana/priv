@@ -79,8 +79,8 @@
     <string name="no_internet_connection_message">No Internet Connection. Please Connect To A Network</string>
     <string name="api_error">Some Error Occured. Try Again Later</string>
     <string name="no_play_services">Please Install Google Play Services In Order To Proceed</string>
-    <string name="facebook_app_secret">b0f55b4906d2da4610f7aa76c51ab120</string>
-    <string name="facebook_app_id">560129334180047</string>
+    <string name="facebook_app_secret">18c9cfc33e0bad0409f99d25b90f7d9f</string>
+    <string name="facebook_app_id">1310840138960883</string>
     <string name="google_plus_app_key">396538672511-bnlkgtm6lva1mgab875srri9mh03uq8h.apps.googleusercontent.com</string>
     <string name="google_plus_app_secret">qf0oSCbfNN5Yxvpevc5vK6Bp</string>
     <string name="google_plus_client_id">396538672511-o5fr28pcsel103hp550elcld98hh4369.apps.googleusercontent.com
