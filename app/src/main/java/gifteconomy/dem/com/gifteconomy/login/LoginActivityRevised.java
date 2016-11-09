@@ -18,20 +18,21 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.cloudrail.si.CloudRail;
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -42,6 +43,7 @@ import gifteconomy.dem.com.gifteconomy.home.activity.HomeActivity;
 import gifteconomy.dem.com.gifteconomy.login.API.LoginApi;
 import gifteconomy.dem.com.gifteconomy.login.model.LoginRequest;
 import gifteconomy.dem.com.gifteconomy.login.model.LoginResponse;
+import gifteconomy.dem.com.gifteconomy.login.model.UserAccount;
 import gifteconomy.dem.com.gifteconomy.login.service.LoginService;
 import gifteconomy.dem.com.gifteconomy.signup.SignupActivity;
 import gifteconomy.dem.com.gifteconomy.utils.Functions;
@@ -64,16 +66,22 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
     private ProgressDialog progressDialog;
     private EditText edtForgetEmail;
     private CallbackManager callbackManager;
-    private AccessTokenTracker accessTokenTracker;
+    private LoginManager loginManager;
+    private UserAccount account;
+    private ProgressDialog progDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
         setContentView(R.layout.activity_login);
         init();
         CloudRail.setAppKey("58201425d1167570c553c925");
-        printHashKey();
+
+        loginManager = LoginManager.getInstance();
+
+       // printHashKey();
     }
 
     public  void printHashKey() {
@@ -105,22 +113,111 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
             Log.e("Exception", e.toString());
         }
     }
+
+    private UserAccount getFacebookData(JSONObject object) {
+
+        UserAccount userAccount = new UserAccount();
+        Bundle bundle = new Bundle();
+        String id = null;
+        try {
+            id = object.getString("id");
+
+            try {
+                URL profile_pic = new URL("https://graph.facebook.com/" + id + "/picture?width=200&height=150");
+                Log.e("profile_pic", profile_pic + "");
+                userAccount.setPictureURL(profile_pic + "");
+                bundle.putString("profile_pic", profile_pic.toString());
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return null;
+            }
+
+            userAccount.setIdentifier(id);
+            bundle.putString("idFacebook", id);
+            if (object.has("first_name"))
+                userAccount.setFullName(object.getString("first_name"));
+            bundle.putString("first_name", object.getString("first_name"));
+            if (object.has("last_name"))
+                bundle.putString("last_name", object.getString("last_name"));
+            userAccount.setFullName(userAccount.getFullName() + " " + object.getString("last_name"));
+            if (object.has("email"))
+                bundle.putString("email", object.getString("email"));
+            userAccount.setEmail(object.getString("email"));
+            if (object.has("gender"))
+                bundle.putString("gender", object.getString("gender"));
+            userAccount.setGender(object.getString("gender"));
+            if (object.has("birthday"))
+                bundle.putString("birthday", object.getString("birthday"));
+            if (object.has("location"))
+                bundle.putString("location", object.getJSONObject("location").getString("name"));
+            userAccount.setLocale(object.getJSONObject("location").getString("name"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        Log.e("user data",userAccount.getFullName()+" || "+ userAccount.getEmail());
+        progDialog.dismiss();
+       /* PrefsUtil.setLoginAsGuest(this, false);
+        Prefs.with(this).save(Constants.PREF_NAME, userAccount.getFullName());
+        Prefs.with(this).save(Constants.PREF_EMAIL, userAccount.getEmail());
+        Prefs.with(this).save(Constants.PREF_PROFILE_URL, userAccount.getPictureURL());
+        Prefs.with(this).save(Constants.PREF_GENDER, userAccount.getGender());
+        Prefs.with(this).save(Constants.PREF_LOGINTYPE, "fb");*/
+        return userAccount;
+    }
+
     private void init() {
 
         mRootView = findViewById(android.R.id.content);
-        // txtTagLine = (TextView) findViewById(R.id.txtTagLine);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
-        // txtTerms = (TextView) findViewById(R.id.txtTerms);
-
         btnRegister = (TextView) findViewById(R.id.btnRegister);
         txtForgetpwsd = (TextView) findViewById(R.id.txtForgetpwsd);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnFb = (Button) findViewById(R.id.btnfacebook);
         btnGplus = (Button) findViewById(R.id.btnGoogle);
-
         progressDialog = new ProgressDialog(this);
         actionListener();
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        //   Log.e("Success", "Login");
+                        if (loginResult.getAccessToken() != null) {
+                            Profile profile = Profile.getCurrentProfile();
+                            //    Log.e("username", profile.getName());
+                        }
+                        GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+                                //   Log.e("LoginActivity", response.toString());
+                                // Get facebook data from login
+                                account = getFacebookData(object);
+                                // Log.e("data",account.toString());
+                            }
+                        });
+                        Bundle parameters = new Bundle();
+                        parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
+                        request.setParameters(parameters);
+                        request.executeAsync();
+
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        progDialog.dismiss();
+                        Toast.makeText(LoginActivityRevised.this, "Login Cancel", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        progDialog.dismiss();
+                        Toast.makeText(LoginActivityRevised.this, exception.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
         // printKeyHash(this);
     }
 
@@ -150,12 +247,15 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //callbackManager.onActivityResult(requestCode, resultCode, data);
+        if (callbackManager.onActivityResult(requestCode, resultCode, data)) {
+            return;
+        }
 
-    private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
     }
-
 
     @Override
     public void onClick(View view) {
@@ -167,15 +267,16 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
             case R.id.btnLogin:
                 Functions.hideKeyPad(this, view);
                 login();
-                // presenter.checkLogin(Functions.getValue(edtEmail), Functions.getValue(edtPassword));
                 break;
 
             case R.id.btnfacebook:
                 if (Functions.isConnected(this)) {
-                     FBLogin();
-                    //mProfile = Cons.SocialMediaProvider.FACEBOOK;
-                    //performLogin();
-                   // Functions.showSnack(mRootView, getString(R.string.app_name));
+                   //  FBLogin();
+                    progDialog=new ProgressDialog(this);
+                    progDialog.setMessage("Please wait.. Getting User Data");
+                    progDialog.show();
+                    LoginManager.getInstance().logInWithReadPermissions(LoginActivityRevised.this, Arrays.asList("email"));
+
                 }
                 else
                 Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
@@ -183,10 +284,8 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
 
             case R.id.btnGoogle:
                 if (Functions.isConnected(this)) {
-                    // GooglesignIn();
                     mProfile = Cons.SocialMediaProvider.GOOGLE_PLUS;
                     performLogin();
-                  //  Functions.showSnack(mRootView, getString(R.string.app_name));
                 }
                 else
                 Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
@@ -209,76 +308,6 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
         startService(intent);
     }
 
-    private void FBLogin() {
-        // set read permission for accessing user info
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList(Cons.FB_READ_PERMISSIONS));
-        // create callback manager for handling login/logout
-        callbackManager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                GraphRequest request = GraphRequest.newMeRequest(
-                        loginResult.getAccessToken(),
-                        new GraphRequest.GraphJSONObjectCallback() {
-
-                            @Override
-                            public void onCompleted(JSONObject object, GraphResponse response) {
-
-                                try {
-                                    // Log.d("user info", object.toString());
-                                    String email = object.getString("email");
-                                    //  String birthday = object.getString("birthday");
-                                    String id = object.getString("id");
-                                    String fname = object.getString("first_name");
-                                    String lname = object.getString("last_name");
-                                    String gender = object.getString("gender");
-                                    //tv_profile_name.setText(name);
-                                    String imageurl = "https://graph.facebook.com/" + id + "/picture?type=large";
-                                      Log.e("user info", fname + " || " + lname + " || " +email +" || "+ gender );
-
-
-                                    ///////////////////////////////////  please code here//////////////////////
-                                    // presenter.checkFBLogin(fname, lname, email, gender);
-
-                                    // Login(Functions.getValue(edtEmail), Functions.getValue(edtPassword));
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        });
-
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id,name,email,gender, birthday,first_name,last_name");
-                request.setParameters(parameters);
-                request.executeAsync();
-
-                /* AccessTokenTracker to manage logout*/
-                accessTokenTracker = new AccessTokenTracker() {
-                    @Override
-                    protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken,
-                                                               AccessToken currentAccessToken) {
-                        if (currentAccessToken == null) {
-                            // do action like  navigate to login page
-                            // Functions.fireIntent(LoginActivity.this, LoginActivity.class);
-                            Functions.showSnack(mRootView, getResources().getString(R.string.fail_msg));
-                        }
-                    }
-                };
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Functions.showSnack(mRootView, getResources().getString(R.string.fail_msg));
-            }
-        });
-    }
     private void login() {
         if (TextUtils.isEmpty(edtEmail.getText().toString().trim())) {
             edtEmail.setError(this.getString(R.string.enter_email));
@@ -302,7 +331,6 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
             //  Functions.fireIntent(LoginActivityRevised.this, HomeActivity.class);
         }
     }
-
 
     protected void showHideProgressDialog(boolean isShow) {
         if (isShow) {

@@ -115,6 +115,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_fb"
                     android:text="@string/facebook"
+                    android:onClick="onClick"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 

@@ -83,8 +83,7 @@
     <string name="facebook_app_id">1310840138960883</string>
     <string name="google_plus_app_key">396538672511-bnlkgtm6lva1mgab875srri9mh03uq8h.apps.googleusercontent.com</string>
     <string name="google_plus_app_secret">qf0oSCbfNN5Yxvpevc5vK6Bp</string>
-    <string name="google_plus_client_id">396538672511-o5fr28pcsel103hp550elcld98hh4369.apps.googleusercontent.com
-</string>
+    <string name="google_maps_key">AIzaSyCFiNoNVTljFbQO77TEeU3e1Qoo6DSmjyc</string>
 
     <string name="project_id">1470079141571</string>
 

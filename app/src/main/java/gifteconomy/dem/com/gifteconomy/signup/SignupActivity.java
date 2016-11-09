@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,14 +27,15 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.codemybrainsout.placesearch.PlaceSearchDialog;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.model.LatLng;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import gifteconomy.dem.com.gifteconomy.R;
@@ -65,9 +68,6 @@ public class SignupActivity extends AppCompatActivity {
     String myFormat = "MM/dd/yy"; //In which you need put here
     SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-
-   /* private static final LatLngBounds BOUNDS_MOUNTAIN_VIEW = new LatLngBounds(
-            new LatLng(22.3071587, 73.1812187), new LatLng(22.3071587, 73.1812187));*/
     private ProgressDialog progressDialog;
     private Calendar myCalendar;
 
@@ -125,9 +125,6 @@ public class SignupActivity extends AppCompatActivity {
         });
 
         getGCM();
-        ;
-
-
 
         mRootView = findViewById(android.R.id.content);
         progressDialog = new ProgressDialog(this);
@@ -180,19 +177,34 @@ public class SignupActivity extends AppCompatActivity {
         edtLocation.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent i = new Intent(SignupActivity.this, LocationPickerActivity.class);
-                startActivityForResult(i, 1);*/
+                new PlaceSearchDialog(SignupActivity.this, new PlaceSearchDialog.LocationNameListener() {
+                    @Override
+                    public void locationName(String locationName) {
+                        //set textview or edittext
 
-                try {
-                    PlacePicker.IntentBuilder intentBuilder =
-                            new PlacePicker.IntentBuilder();
-                    //intentBuilder.setLatLngBounds(BOUNDS_MOUNTAIN_VIEW);
-                    Intent intent = intentBuilder.build(SignupActivity.this);
-                    startActivityForResult(intent, 1);
-                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
-                    e.printStackTrace();
-                }
+                        edtLocation.setText(locationName);
 
+                        if(Geocoder.isPresent()){
+                            try {
+                               // String location = "theNameOfTheLocation";
+                                Geocoder gc = new Geocoder(SignupActivity.this);
+                                List<Address> addresses= gc.getFromLocationName(locationName, 5); // get the found Address Objects
+
+                                List<LatLng> ll = new ArrayList<LatLng>(addresses.size()); // A list to save the coordinates if they are available
+                                for(Address a : addresses){
+                                    if(a.hasLatitude() && a.hasLongitude()){
+                                        Log.e("location name",locationName + " || lat = "+ a.getLatitude() + " || "+ a.getLongitude());
+                                        ll.add(new LatLng(a.getLatitude(), a.getLongitude()));
+                                    }
+                                }
+
+                            } catch (IOException e) {
+                                // handle the exception
+                            }
+                        }
+                    }
+                }).show();
+                //placeSearchDialog.show();
             }
         });
 
@@ -202,23 +214,7 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
 
-                final Place place = PlacePicker.getPlace(this, data);
-                String area = place.getName().toString();
-                edtLocation.setText(area);
-                Log.e("LATLoNG****", place.getLatLng() + "");
-                Log.e("LATITUDE****", String.valueOf(place.getLatLng().latitude));
-                Log.e("LONGITUDE****", String.valueOf(place.getLatLng().longitude));
-                lat = String.valueOf(place.getLatLng().latitude);
-                lon = String.valueOf(place.getLatLng().longitude);
-
-            }
-            if (resultCode == RESULT_CANCELED) {
-                //Write your code if there's no result
-            }
-        }
     }
 
     private void attemptSignup() {
