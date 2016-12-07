@@ -358,21 +358,21 @@ public class SignupActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Functions.showSnack(mRootView,response.body().data.message);
+                        Functions.showSnack(SignupActivity.this,response.body().data.message);
                         showHideProgressDialog(false);
                     }
                 }
 
                 @Override
                 public void onFailure(Call<SignUpResponse> call, Throwable t) {
-                    Functions.showSnack(mRootView,getResources().getString(R.string.api_error));
+                    Functions.showSnack(SignupActivity.this,getResources().getString(R.string.api_error));
                     showHideProgressDialog(false);
                 }
             });
         }
         else
         {
-            Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
+            Functions.showSnack(SignupActivity.this, getString(R.string.no_internet_connection_message));
             showHideProgressDialog(false);
         }
     }
@@ -418,7 +418,7 @@ public class SignupActivity extends AppCompatActivity {
                 }
             }.execute();
         } else {
-            Functions.showSnack(mRootView, getString(R.string.no_play_services));
+            Functions.showSnack(SignupActivity.this, getString(R.string.no_play_services));
         }
     }
 

@@ -279,7 +279,7 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
 
                 }
                 else
-                Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
+                Functions.showSnack(LoginActivityRevised.this, getString(R.string.no_internet_connection_message));
                 break;
 
             case R.id.btnGoogle:
@@ -288,7 +288,7 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
                     performLogin();
                 }
                 else
-                Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
+                Functions.showSnack(LoginActivityRevised.this, getString(R.string.no_internet_connection_message));
                 break;
 
             case R.id.txtForgetpwsd:
@@ -363,21 +363,21 @@ public class LoginActivityRevised extends AppCompatActivity implements OnClickLi
                     }
                     else
                     {
-                        Functions.showSnack(mRootView,response.body().data.message);
+                        Functions.showSnack(LoginActivityRevised.this,response.body().data.message);
                         showHideProgressDialog(false);
                     }
                 }
 
                 @Override
                 public void onFailure(Call<LoginResponse> call, Throwable t) {
-                    Functions.showSnack(mRootView,getResources().getString(R.string.api_error));
+                    Functions.showSnack(LoginActivityRevised.this,getResources().getString(R.string.api_error));
                     showHideProgressDialog(false);
                 }
             });
 
             //  Functions.fireIntent(LoginActivityRevised.this, Homep.class);
         } else {
-            Functions.showSnack(mRootView, getString(R.string.no_internet_connection_message));
+            Functions.showSnack(LoginActivityRevised.this, getString(R.string.no_internet_connection_message));
             showHideProgressDialog(false);
         }
     }

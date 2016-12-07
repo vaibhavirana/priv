@@ -108,11 +108,11 @@ public class Functions {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    public static void showSnack(View view, String msg) {
+    public static void showSnack(Context context, String msg) {
 
-        new MaterialDialog.Builder(view.getContext())
+        new MaterialDialog.Builder(context)
                 .content(msg)
-                .typeface(Functions.getBoldFont(view.getContext()), Functions.getRegularFont(view.getContext()))
+                .typeface(Functions.getBoldFont(context), Functions.getRegularFont(context))
                 .positiveText(android.R.string.ok)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
